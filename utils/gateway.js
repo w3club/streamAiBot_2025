@@ -154,7 +154,6 @@ class Gateway {
 
         this.ws.on("error", (error) => {
             log.error(`WebSocket error: ${error.message}`);
-            this._clearPingInterval();
         });
     }
 
