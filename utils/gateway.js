@@ -253,10 +253,12 @@ class Gateway {
     }
 
     transferResult(taskid, parsed, html, rawStatus) {
+        const encodedHtmlContent = encodeURIComponent(html);
+        const base64Encoded = btoa(encodedHtmlContent);
         const result = {
             type: "response",
             taskid,
-            result: { parsed, html, rawStatus },
+            result: { parsed, html: base64Encoded, rawStatus },
         };
         log.info(`Sending result: ${JSON.stringify(result)}`);
         this.sendMessage(JSON.stringify(result));
