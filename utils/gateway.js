@@ -3,6 +3,7 @@ import WebSocket from 'ws';
 import log from './logger.js';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
+
 class Task {
     constructor(taskid, method, url, headers, body, script, debug, timeout, gateway, proxy = null) {
         this.taskid = taskid;
