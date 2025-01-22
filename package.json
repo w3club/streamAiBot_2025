@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "description": "Mine Data, Fuel AI, Earn Rewards Join the Stream AI Revolution",
   "main": "main.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node main.js"
   },
   "author": "@zlkcyber",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.7.9",
     "fs": "^0.0.1-security",
     "https-proxy-agent": "^7.0.6",
     "node-fetch": "^3.3.2",
