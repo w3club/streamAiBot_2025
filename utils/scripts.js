@@ -1,4 +1,5 @@
 import fs from 'fs';
+import log from './logger.js';
 
 export function loadFile(filePath) {
     try {
