@@ -2,31 +2,20 @@
 Mine Data, Fuel AI, Earn Rewards Join the Stream AI Revolution
 ![alt text](image-2.png)
 
-- Website [https://app.allstream.ai/](https://app.allstream.ai/index?referralCode=FlGQxaTO)
+- Website [https://app.allstream.ai/](https://app.minionlab.ai/?referralCode=fxUrOLJs)
 - Twitter/X [@allstream_ai](https://x.com/allstream_ai)
 
 ## Features
 
 - **Auto Create Connections**
 - **Support Multy Accounts**
-- **Support Proxy** format `http://ip:port` or `http://username:password@ip:port`
-
-## Requirements
-
-- **Node.js**: Ensure you have Node.js installed.
-- **NPM**: Ensure you have npm installed.
-- **AiStream ID**: follow instructions below to get
-- Create AiStream here : [https://app.allstream.ai/](https://app.allstream.ai/index?referralCode=FlGQxaTO)
-- F12 to inspect if you already login
-- find MyInfo from Network and copy your id.
-   ![uid](image-1.png)
+- **Support Proxy** format `http://ip:port` or `http://username:password@ip:port` or `socks5://username:password@ip:port`
 
 
 ## Setup
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Zlkcyber/streamAi.git
    cd streamAi
    ```
 2. Install dependencies:
@@ -35,11 +24,13 @@ Mine Data, Fuel AI, Earn Rewards Join the Stream AI Revolution
    ```
 3. Setup: Paste userId to `userIds.txt` 1 line 1 account
    ```bash
-   nano userIds.txt
+   # 格式： 邮箱|密码 一行一个
+   nano accounts.txt
    ```
 4. Setup: paste proxy to `proxies.txt` 1 line 1 proxy
    ```bash
-   nano proxies.txt
+   # 格式：proxy,proxy,proxy，一个账号支持多组
+   nano proxy.txt
    ```
 5. Run The Script:
    ```bash
