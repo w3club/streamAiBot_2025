@@ -28,7 +28,8 @@ class User {
 
   async login() {
     const { email, password } = this;
-    const res = await this.axios.post(
+    console.log(email, password , 'email, password')
+    const res =  await this.axios.post(
       "https://api.allstream.ai/web/v1/auth/emailLogin",
       {
         code: "",
@@ -37,7 +38,21 @@ class User {
         referralCode: "",
       }
     );
+    this.token = res?.data?.data?.token;
   }
+
+  async getUserInfo () {
+    const res =  await this.axios.get(
+      "https://api.allstream.ai/web/v1/auth/myInfo",
+      {
+        headers: {
+          authorization: `Bearer ${this.token}`
+        }
+      }
+    );
+    return res?.data?.data.uuid;
+  }
+
 }
 
 export { User };
