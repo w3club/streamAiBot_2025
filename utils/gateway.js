@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import WebSocket from 'ws';
 import log from './logger.js';
 import { HttpsProxyAgent } from 'https-proxy-agent';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 
 class Task {
     constructor(taskid, method, url, headers, body, script, debug, timeout, gateway, proxy = null) {
@@ -18,6 +19,11 @@ class Task {
         };
 
         if (proxy) {
+            if (proxy.startsWith('socks5://')) {
+                fetchOptions.agent = new SocksProxyAgent(proxy);
+            } else {
+                fetchOptions.agent = new HttpsProxyAgent(proxy);
+            }
             fetchOptions.agent = new HttpsProxyAgent(proxy);
         }
 
